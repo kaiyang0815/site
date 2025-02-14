@@ -1,0 +1,12 @@
+{
+  "title": "Notes",
+  "description": "The notes",
+  "icon": "NotebookPen",
+  "root": true,
+  "pages": [
+    "---Next.js 15---",
+    "index",
+    "---Shadcn UI---",
+    "---Tailwind CSS---"
+  ]
+}

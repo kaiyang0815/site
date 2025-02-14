@@ -1,0 +1,12 @@
+{
+  "title": "Tutorials",
+  "description": "The tutorials",
+  "icon": "Library",
+  "root": true,
+  "pages": [
+    "---Next.js 15---",
+    "index",
+    "---Shadcn UI---",
+    "---Tailwind CSS---"
+  ]
+}
