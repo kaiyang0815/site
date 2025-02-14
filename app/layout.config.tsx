@@ -1,8 +1,8 @@
-import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
+import Preview from '@/public/banner.png';
 import { type LinkItemType } from 'fumadocs-ui/layouts/docs';
+import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 import { AlbumIcon, Book, LayoutTemplate, NotebookPen } from 'lucide-react';
 import Image from 'next/image';
-import Preview from '@/public/banner.png';
 
 export const linkItems: LinkItemType[] = [
   {
@@ -82,4 +82,5 @@ export const baseOptions: BaseLayoutProps = {
     },
     ...linkItems,
   ],
+  i18n: true,
 };

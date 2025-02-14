@@ -1,11 +1,9 @@
 {
-  "title": "Notes",
-  "description": "The notes",
-  "icon": "NotebookPen",
+  "title": "教程",
+  "description": "前端独立开发技术相关教程",
+  "icon": "Library",
   "root": true,
   "pages": [
-    "---React---",
-    "react",
     "---Next.js 15---",
     "index",
     "---Shadcn UI---",

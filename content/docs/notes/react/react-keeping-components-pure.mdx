@@ -1,0 +1,39 @@
+---
+title: "Keeping components pure"
+---
+
+## what is pure function
+
+In the same way, each component should only “think for itself”, and not attempt to coordinate with or depend upon others during rendering. Rendering is like a school exam: each component should calculate JSX on their own!
+
+The same inputs would return the same outputs.
+
+## strict Mode
+
+> By calling the component functions twice, Strict Mode helps find components that break these rules.
+
+use strict mode to find the component which break the rule about pure, the stict mode will call the component twice and the pure function only calculate the inner expression so the pure function will not cause effect though it will be called twice.
+
+## Local "mutation" be allowed
+
+the opreation about prexisting variables is called "mutation", but if the sub function operate the same level variables, it would be allowed. Because the return and the variables at the same level.
+
+## Event handlers don’t need to be pure
+
+althourgh the event handler defined in component, they not exec during rendering.
+
+## why pure component
+
+Because the same inputs would return the same outpus, so the component can be used by many users deploied on server.
+
+## recap
+
+A component must be pure, meaning:
+
+- It minds its own business. It should not change any objects or variables that existed before rendering.
+- Same inputs, same output. Given the same inputs, a component should always return the same JSX.
+
+Rendering can happen at any time, so components should not depend on each others’ rendering sequence.
+You should not mutate any of the inputs that your components use for rendering. That includes props, state, and context. To update the screen, “set” state instead of mutating preexisting objects.
+Strive to express your component’s logic in the JSX you return. When you need to “change things”, you’ll usually want to do it in an event handler. As a last resort, you can useEffect.
+Writing pure functions takes a bit of practice, but it unlocks the power of React’s paradigm.
