@@ -1,0 +1,181 @@
+---
+title: The Note Of Next.js 15 Crash Course
+description: Next.js 15 Crash Course made by JSM.
+---
+
+## 00:00:00 — Intro
+
+## 00:05:25 — Next.js Benefits
+
+the ebook
+
+### client vs server components
+
+The architecture of Next.js originally react and it have two types of components, the client component which runs in user's browser and server component which runs on the server, this concept was supported by react 19 released.The Next.js is the first to adopt server componet and fully utilizes it, all component you create automatically converts to server component unless you specifically instructed not to.
+
+### the handler of rendering
+
+The react 19 supports server components choose the way it handles rendering.It can optimize the performance when you visit a page which server has full rendered.
+
+And the serch engine could crawl and index the websites.
+
+### routing and file-based system
+
+The Next.js doesn't require installing a separate routing package and it use file-based routing, each folder's name will becames the route segement and the page in folder will render the html.
+
+Use this system, Next.js support backend api develop, this means it can create an api endpoint by simply creating a file called route inside a folder call whichever you want.
+
+### auto code split
+
+The Next.js automates code splitting by default, it can speed up page load times.
+
+### optimization, like font image script og
+
+The Next.js provides font optimization reduce the loading time by pre-loading font files.
+
+The image optimization automatically compresses images and applies lazy loading.
+
+The script optimization optimizes third party scripts.
+
+> The Next.js support Font, Image, Script component for these optimizations.
+
+## 00:10:55 — Next.js Theory & Practical
+
+### CLI
+
+npx create-next-app@latest
+all options set default
+
+### The project structure
+
+#### tsconfig.json
+
+The configuration file for typescript it defines what should be type checked ignored and the rules to follow next
+
+#### tailwind.config.ts
+
+#### postcss.config.mjs
+
+The configuration file for postcss, a tool used to process CSS with different plugins.
+
+#### next.config.ts
+
+Config Next.js features such as experimental options image settings.
+
+and more
+
+#### public folder
+
+Contains static assets always put images and other static data here.
+
+#### app folder
+
+### React Server Components
+
+why not all
+
+### React Client Components
+
+directive "use client"
+
+server-side prerendering
+
+when to use client component
+
+### Routing
+
+file-based system
+
+nested routes
+
+#### Dynamic routes
+
+Dynamic routing in Next.js allows part of the URL to change based on user input or specific data from a database. To create a dynamic route, wrap the dynamic part of the URL in square brackets.
+
+### Layouts
+
+root layout
+
+route layout
+
+### Route Groups
+
+The Route Group allow you to organize your route segments and project structure without impacting the URL path, this means that you can create folders but unlike nested routes they won't show up in the URL you do that by wrapping the folder name inside parentheses.
+
+### Error handing
+
+error.tsx
+
+global-error.tsx
+
+### Loading UIs
+
+loding.tsx
+
+### Data fetching
+
+Auto request dulplicate
+
+Keep senceitive sercurity
+
+### SSG
+
+### ISR
+
+time based validate
+
+### SSR
+
+### PPR
+
+it's a new rendering model that combines static and dynamic rendering it allows you to render a static shell of a page while streaming Dynamic content.
+
+### API Routes
+
+### Search Engine Optimization(SEO)
+
+metadata config based, generateMetadata, file-based
+
+## 01:02:03 — Demo of the App
+
+## 01:06:58 — Setup new project
+
+## 01:09:20 — Authentication with NextAuth
+
+## 01:28:25 — Theming and Fonts
+
+## 01:35:28 — Hero Section
+
+## 01:44:15 — Search Form
+
+## 01:55:30 — All Startups & Startup Card
+
+## 02:12:37 — Sanity Setup
+
+## 02:20:01 — Sanity Schema
+
+## 02:33:03 — Fetching Data and Type Safety
+
+## 02:45:05 — Cache and Live API w/ Next.js
+
+## 02:52:37 — Real-time Search w/ URL Query Params
+
+## 02:56:27 — Understanding Partial Pre-rendering
+
+## 03:08:31 — Startup Details
+
+## 03:25:58 — Sanity Write Client
+
+## 03:34:57 — Author Authentication Flow
+
+## 03:50:03 — Create Startup Form
+
+## 04:22:52 — Server Action
+
+## 04:33:50 — Performance & Bug Tracking in Next.js Apps w/ Sentry
+
+## 04:43:42 — User Profile
+
+## 05:02:04 — Final Feature, Parallel Fetching and Deployment
+
+## the ebook writen by jsm about the ultimate next.js book
