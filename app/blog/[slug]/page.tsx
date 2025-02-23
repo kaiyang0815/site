@@ -1,5 +1,5 @@
-import { CustomMDX } from '@/components/mdx';
 import { formatDate, getBlogPosts } from '@/lib/utils';
+import { CustomMDX } from '@/mdx-components';
 import { baseUrl } from 'app/sitemap';
 import { notFound } from 'next/navigation';
 
@@ -23,13 +23,13 @@ export async function generateMetadata({
     return;
   }
 
-  let {
+  const {
     title,
     publishedAt: publishedTime,
     summary: description,
     image,
   } = post.metadata;
-  let ogImage = image
+  const ogImage = image
     ? image
     : `${baseUrl}/og?title=${encodeURIComponent(title)}`;
 
@@ -63,45 +63,21 @@ export default async function Blog({
   params: Promise<{ slug: string }>;
 }) {
   const slug = (await params).slug;
-  let post = getBlogPosts().find((post) => post.slug === slug);
+  const post = getBlogPosts().find((post) => post.slug === slug);
 
   if (!post) {
     notFound();
   }
 
   return (
-    <section>
-      <script
-        type="application/ld+json"
-        suppressHydrationWarning
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BlogPosting',
-            headline: post.metadata.title,
-            datePublished: post.metadata.publishedAt,
-            dateModified: post.metadata.publishedAt,
-            description: post.metadata.summary,
-            image: post.metadata.image
-              ? `${baseUrl}${post.metadata.image}`
-              : `/og?title=${encodeURIComponent(post.metadata.title)}`,
-            url: `${baseUrl}/blog/${post.slug}`,
-            author: {
-              '@type': 'Person',
-              name: 'Mizar WANG',
-            },
-          }),
-        }}
-      />
-      <h1 className="title font-semibold text-2xl tracking-tighter">
-        {post.metadata.title}
-      </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          {formatDate(post.metadata.publishedAt)}
+    <section className="prose dark:prose-invert">
+      <h1>{post.metadata.title}</h1>
+      <div className="flex justify-between items-center">
+        <p className="text-sm text-zinc-300 dark:text-zinc-500">
+          {formatDate(post.metadata.publishedAt, true)}
         </p>
       </div>
-      <article className="prose">
+      <article>
         <CustomMDX source={post.content} />
       </article>
     </section>

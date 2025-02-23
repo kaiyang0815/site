@@ -33,6 +33,7 @@
   "devDependencies": {
     "@shikijs/rehype": "^3.0.0",
     "@shikijs/twoslash": "^3.0.0",
+    "@tailwindcss/typography": "^0.5.16",
     "shiki": "^3.0.0"
   }
 }
